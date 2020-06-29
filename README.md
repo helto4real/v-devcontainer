@@ -1,6 +1,6 @@
 # V-devcontianer
 
-This is the devcontainer for developing in v with VS-code. It is a pre-configured devcontainer for v-development. Takes a few minutes and you are up and running deveoping in V-lang. It is currently based on Debian but will be moved to a lighter alpine when it is supported.
+This is the devcontainer for developing in V-lang with Visual Studio Code. It is a pre-configured devcontainer for V-lang development. Takes a few minutes and you are up and running developing in V-lang. It is currently based on Debian but will be moved to a lighter alpine when it is supported. Works both on Linux and Windows.
 
 You will need:
 
