@@ -14,13 +14,9 @@ RUN apt-get update && \
     apt-get clean && rm -rf /var/cache/apt/archives/* && \
     rm -rf /var/lib/apt/lists/*
 
-# RUN apk --no-cache add \
-#   git make upx gcc \
-#   musl-dev \
-#   openssl-dev sqlite-dev \
-#   libx11-dev glfw-dev freetype-dev
-
-# RUN apk --no-cache add --virtual sdl2deps sdl2-dev sdl2_ttf-dev sdl2_mixer-dev sdl2_image-dev valgrind nodejs npm
-
 RUN git clone https://github.com/vlang/v /opt/vlang && make && v -version
 
+RUN mkdir /home/projects
+WORKDIR /home/projects
+
+ENTRYPOINT ["/bin/bash"]
