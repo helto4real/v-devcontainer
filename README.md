@@ -1,6 +1,6 @@
-# V container for development in V-language
+# V-lang development container in docker 
 
-This is for setting up and development environment for developing in V-language using a docker container. You can use the container as a stand-alone container or as a devcontainer in vscode. 
+This is for setting up and development environment for developing in the awesome V-language using a docker container. You can use the container as a stand-alone container or as a devcontainer in vscode. 
 
 ## The container 
 
