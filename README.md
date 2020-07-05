@@ -20,14 +20,13 @@ Works both with docker for linux and windows.
 [Here are installation instructions on ubuntu](https://docs.docker.com/engine/install/ubuntu/) but on that page there are instructions for other distributions too.
 
 ## 2. Building the docker image
- - cd into `.devcontainer` folder
- - Build your docker image by running `docker build . -t v-devcontainer` (you can call it what ever you want instead of `v-devcontainer`)
+ - From repo root, build your docker image by running `docker build . -t v-devcontainer` (you can call it what ever you want instead of `v-devcontainer`)
 
 ## 3. Running the docker image
 
 ### Run the container
 
-You can run the docker images by using the following command:
+You can run the development docker container from the repo root:
 
 ```bash
 
@@ -42,19 +41,19 @@ docker run -d \
 
 ```
 
-### Attach to a running container
+### Attach a new bash in to the running container
 
-Attach to container by:
+With docker you do not need ssh. To access the command prompt inside the docker container you need to execute the bash command by:
 
 ```bash
 
-docker attach v-devcontainer
+docker exec -it v-devcontainer /bin/bash
 
 ``` 
 
-When you exit the attached container it will stop. 
+When you exit the attached container it will stop. Next time you need to develop you need to start the container again.
 
-### Start a stopped container
+### Start the stopped container
 
 ```bash
 
@@ -63,6 +62,26 @@ docker ps -a
 
 # start a stopped container
 docker start v-devcontainer
+
+```
+
+## Stop the docker container
+
+To stop the container from taking resources not developing just stop it using:
+
+```bash
+
+docker stop v-devcontainer
+
+```
+
+## Remove the docker container
+
+Sometimes you want to remove a created container. For example when you want to restart from the beginning again. You remove the image by:
+
+```bash
+
+docker rm v-devcontainer
 
 ```
 

@@ -1,3 +1,6 @@
+# This is the dockerfile for generating V-development docker images
+# It is currently using debian but will be changed to alpine when
+# itś supported
 FROM debian:buster
 
 LABEL maintainer="helto4real <helto4real@joysoftware.xyz>"
@@ -16,7 +19,9 @@ RUN apt-get update && \
 
 RUN git clone https://github.com/vlang/v /opt/vlang && make && v -version
 
+RUN echo "while true; do sleep 1000; done" > /run.sh && chmod +x /run.sh
+
 RUN mkdir /home/projects
 WORKDIR /home/projects
 
-ENTRYPOINT ["/bin/bash"]
+CMD ["/bin/bash","/run.sh"]
